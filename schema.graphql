@@ -1,0 +1,29 @@
+schema {
+    query: Query
+}
+
+type Post {
+    redditID: String!
+    type: MediaType!
+    url: String!
+}
+
+type Query {
+    posts(after: String, before: String, count: Int!): [Post!]!
+}
+
+input PostInput {
+    redditID: String!
+    type: MediaType!
+    url: String!
+}
+
+type Mutation {
+    createPost(post: PostInput!): String!
+}
+
+enum MediaType {
+    Embed
+    Pic
+    Video
+}

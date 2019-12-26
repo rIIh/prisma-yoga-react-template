@@ -1,0 +1,10 @@
+overwrite: true
+schema: "./schema.graphql"
+generates:
+  ./server/generated/resolvers.types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+    config:
+      contextType: ../types/Context#Context
+      enumsAsTypes: true

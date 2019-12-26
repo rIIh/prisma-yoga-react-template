@@ -1,0 +1,17 @@
+type User {
+  id: ID! @id
+  name: String!
+}
+
+enum MediaType {
+  Pic
+  Embed
+  Video
+}
+
+type Post {
+  id: ID! @id
+  redditID: String!
+  url: String!
+  type: MediaType!
+}
